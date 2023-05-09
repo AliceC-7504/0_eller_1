@@ -100,70 +100,10 @@ class Sequence_guesser():
     # Returns % expected correctness
     def report_correctness_expectation(self):
         return (self.correct_expectation / self.amount_guesses) * 100
-    
-    
 
-'''
-x = []
-y1 = []
-y2 = []
-for i in range(50, 8001, 50):
-    print('length: ' + str(i))
-    correctness = []
-    expectation = []
-    for j in range(10):
-        with open('sequence_random.txt', 'w') as f:
-            for k in range(i):
-                if rand.random() >= 0.5:
-                    f.write('0')
-                else:
-                    f.write('1')
-        sequence_guesser = Sequence_guesser('sequence_random.txt')
-        while sequence_guesser.correction != "":
-            sequence_guesser.guess_next(2)
-        correctness.append(sequence_guesser.report_correctness())
-        expectation.append(sequence_guesser.report_correctness_expectation())
-    x.append(i)
-    y1.append(sum(correctness) / len(correctness))
-    y2.append(sum(expectation) / len(expectation))
-plt.plot(x,y1, label = 'Gissnings-korrekthet %')
-plt.plot(x,y2, label = 'Förväntad gissnings-korrekthet %')
-plt.legend()
-plt.xlabel('Sekvenslängd')
-plt.show()
-
-'''
-
-'''
-with open('sequence_random.txt', 'w') as f:
-        for i in range(10000):
-            if rand.random() >= 0.5:
-                f.write('0')
-            else:
-                f.write('1')
-
-x = []
-y1 = []
-y2 = []
-'''
-sequence_guesser = Sequence_guesser('sequence_little.txt')
+sequence_guesser = Sequence_guesser('sequence.txt') # Replace with filepath to sequence
 while sequence_guesser.correction != "":
-    sequence_guesser.guess_next(2)
-    '''
-    x.append(len(sequence_guesser.sequence))
-    
-    y1.append(sequence_guesser.report_correctness())
-    y2.append(sequence_guesser.report_correctness_expectation())
-    '''
-'''
-plt.plot(x,y2, label = 'Förväntad korrekthet %')
-plt.plot(x,y1, label = 'Riktig korrekthet %')
+    sequence_guesser.guess_next(2) # Use argument 1 or 2 depending on which model should be used
 
-plt.legend()
-plt.xlabel('Sekvenslängd')
-plt.show()
-'''
 print("Correctness: " + str(sequence_guesser.report_correctness()) + ' %')
 print("Expectation: " + str(sequence_guesser.report_correctness_expectation()) + ' %')
-#'''
-
