@@ -6,4 +6,4 @@ small.txt : 343
 medium.txt : 457  
 moderate.txt : 1000  
 large.txt : 1577  
-big.txt : 3000  
+big.txt : 3072  
