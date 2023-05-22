@@ -1,5 +1,3 @@
-import random as rand
-import matplotlib.pyplot as plt
 from functions import maxSeq, seqs
 
 class Sequence_guesser():
